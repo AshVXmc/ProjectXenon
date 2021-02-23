@@ -1,0 +1,29 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§6SCP Bedrock Unity Add-on§6 §2RP§2",
+		"description": "§fMade by AshVXmc§f",
+		"uuid": "1a2564b7-0a4e-4cd4-a91a-ab131c485787",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			13,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "aa500a82-005b-4089-bcb0-0892984bcb7c",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

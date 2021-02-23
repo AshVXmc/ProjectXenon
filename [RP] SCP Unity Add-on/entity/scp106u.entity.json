@@ -1,0 +1,37 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "ashvx:scp106u",
+        "materials": {
+          "default": "skeleton"
+        },
+        "textures": {
+          "default": "textures/entity/scp106u"
+        },
+        "geometry": {
+          "default": "geometry.scp106u"
+        },
+        "animations": {
+          "walk": "animation.scp106u.walk"
+        },
+        "scripts": {
+
+          "animate": [
+            {
+              "walk": "query.modified_move_speed"
+            },
+            "look_at_target"
+          ]
+        },
+        "render_controllers": [
+          "controller.render.default"
+        ],
+        "enable_attachables": false,
+        "spawn_egg": {
+          "texture": "scp106u-egg",
+          "texture_index": 0
+        }
+      }
+    }
+  }

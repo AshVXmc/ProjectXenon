@@ -1,0 +1,24 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ashvx:scp173u",
+			"materials": {
+				"default": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/scp173u"
+			},
+			"geometry": {
+				"default": "geometry.scp173u"
+			},
+			"spawn_egg": {
+				"texture": "scp173u-egg",
+				"texture_index": 0
+			},
+	        "render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

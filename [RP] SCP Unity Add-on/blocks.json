@@ -1,0 +1,99 @@
+{
+  "format_version": [1, 1, 0],
+  "ashvx:concrete1": {
+		"sound": "stone",
+      "textures" : {
+         "down" : "concrete1-top",
+         "side" : "concrete1",
+         "up" : "concrete1-top"
+      }
+	},
+  "ashvx:computer": {
+    "textures": "computer",
+    "sound": "stone"
+  },
+  "ashvx:regular_computer": {
+    "textures": "regular_computer",
+    "sound": "stone"
+  },
+  "ashvx:cabinet": {
+    "textures": "cabinet",
+    "sound": "stone"
+  },
+  "ashvx:yellow_fence": {
+    "textures": "yellow_fence",
+    "sound": "wood"
+  },
+  "ashvx:table_left": {
+    "textures": "table_left",
+    "sound": "wood"
+  },
+  "ashvx:table_right": {
+    "textures": "table_right",
+    "sound": "wood"
+  },
+  "ashvx:tile1": {
+    "textures": "tile1",
+    "sound": "stone"
+  },
+  "ashvx:top_lamp": {
+    "textures": "top_lamp",
+    "sound": "glass"
+  },
+  "ashvx:plant1": {
+    "textures": "plant1",
+    "sound": "wool"
+  },
+  "ashvx:corrosion_block": {
+    "textures": "corrosion_block",
+    "sound": "stone"
+  },
+  "ashvx:scp500u": {
+    "textures": "scp500u",
+    "sound": "wood"
+  },
+  "ashvx:lcz_door_1": {
+    "textures": "lcz_door_1",
+    "sound": "stone"
+  },
+  "ashvx:lcz_door_2": {
+    "textures": "lcz_door_2",
+    "sound": "stone"
+  },
+  "ashvx:chair1": {
+    "textures": "chair1",
+    "sound": "wool"
+  },
+  "ashvx:concrete2": {
+    "textures": {
+      "down":"concrete1-top",
+      "up": "concrete1-top",
+      "side":"concrete2"
+    }
+  },
+  "ashvx:concrete3": {
+    "textures": {
+      "down":"concrete1-top",
+      "up": "concrete1-top",
+      "side":"concrete3"
+    }
+  },
+  "ashvx:concrete4": {
+    "textures": {
+      "down": "concrete4-top",
+      "up": "concrete4-top",
+      "side": "concrete4"
+    }
+  },
+  "ashvx:concrete5": {
+    "textures": {
+      "down": "concrete4-top",
+      "up": "concrete4-top",
+      "side": "concrete5"
+    }
+  },
+  "ashvx:wooden_crate": {
+    "textures": "wooden_crate",
+    "sound": "wood"
+  }
+}

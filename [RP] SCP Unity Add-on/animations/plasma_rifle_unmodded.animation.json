@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.plasma_rifle_unmodded.first_person.hold": {
+			"loop": true,
+			"animation_length": 0.76,
+			"bones": {
+				"plasma_rifle_unmodded": {
+					"rotation": [105, 52.5, -7.5],
+					"position": [0, 7, 0]
+				}
+			}
+		}
+	}
+}
+
