@@ -1,0 +1,99 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "ashvx:chair1",
+            "properties": {
+                "chair:facing_direction": [0, 1, 2, 3]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_property('chair:facing_direction') == 0",
+                "components": {
+                    "minecraft:rotation": [0, 180, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('chair:facing_direction') == 1",
+                "components": {
+                    "minecraft:rotation": [0, 0, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('chair:facing_direction') == 2",
+                "components": {
+                    "minecraft:rotation": [0, 270, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('chair:facing_direction') == 3",
+                "components": {
+                    "minecraft:rotation": [0, 90, 0]
+                }
+            }
+
+
+        ],
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "chair1",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:pick_collision": {
+                "origin": [ -7, 13, -7 ],
+                "size": [ 15, 30, 15 ]
+            },
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": "geometry.chair1",
+            "minecraft:destroy_time": 1.0,
+            "minecraft:friction": 0.2,
+            "minecraft:flammable": {
+                "flame_odds": 0,
+                "burn_odds": 0
+            },
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_absorption": 0,
+            "minecraft:on_interact": {
+                "event": "ashvx:rideable_entity"
+            },
+            "minecraft:on_player_placing": {
+                "event": "set_placing_rotation"
+            }
+        },
+        "events": {
+            "set_placing_rotation": {
+                "set_block_property": {
+                    "chair:facing_direction": "query.cardinal_facing_2d-2" 
+                }
+            },
+            "force_player_ride": {
+                "run_command": {
+                    "target":"other",
+                    "command": [
+                        "ride @s start_riding @e[type=ashvx:chair1_entity,c=1] teleport_rider"
+                    ]
+                }
+            },
+            "ashvx:rideable_entity": {
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command":[
+                                "summon ashvx:chair1_entity ~ ~ ~",
+                                "execute @e[type=ashvx:chair1_entity,c=1] ~~~ tp @s ~~~ facing ~~~1"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "force_player_ride"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

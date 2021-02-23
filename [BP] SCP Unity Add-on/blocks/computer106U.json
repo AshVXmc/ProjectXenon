@@ -1,0 +1,82 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "ashvx:computer106U",
+            "properties": {
+                "computer106u:facing_direction": [0, 1, 2, 3]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_property('computer106u:facing_direction') == 0",
+                "components": {
+                    "minecraft:rotation": [0, 180, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('computer106u:facing_direction') == 1",
+                "components": {
+                    "minecraft:rotation": [0, 0, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('computer106u:facing_direction') == 2",
+                "components": {
+                    "minecraft:rotation": [0, 270, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('computer106u:facing_direction') == 3",
+                "components": {
+                    "minecraft:rotation": [0, 90, 0]
+                }
+            }
+        ],
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "computer",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:pick_collision": {
+                "origin": [ -7, 0, -7 ],
+                "size": [ 15, 15, 15 ]
+            },
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": "geometry.computer",
+            "minecraft:destroy_time": 3.0,
+            "minecraft:friction": 0.2,
+            "minecraft:map_color": "#00ff00",
+            "minecraft:flammable": {
+                "flame_odds": 0,
+                "burn_odds": 0
+            },
+            "minecraft:block_light_emission": 0,
+            "minecraft:block_light_absorption": 0,
+            "minecraft:on_interact": {
+                "event": "ashvx:click106U",
+                "target": "self"
+            },
+            "minecraft:on_player_placing": {
+                "event": "set_placing_rotation"
+            }
+        },
+        "events": {
+            "ashvx:click106U": {
+                "run_command": {
+                    "command": [
+                        "say §4SCP-106-U§4 §4(Keter class)§4",
+                        "say §9scpwiki.com/scp-106§9"
+                    ]
+                }
+            },
+            "set_placing_rotation": {
+                "set_block_property": {
+                    "computer106u:facing_direction": "query.cardinal_facing_2d-2" 
+                }
+            }
+      }
+    }
+}

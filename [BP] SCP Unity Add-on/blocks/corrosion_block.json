@@ -1,0 +1,31 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "ashvx:corrosion_block",
+            "is_experimental": false,
+            "register_to_creative_menu": true
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "corrosion_block",
+                    "render_method": "opaque"
+                }
+            },
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:destroy_time": 5,
+            "minecraft:explosion_resistance": 10,
+            "minecraft:friction": 0.1,
+            "minecraft:preventsjumping": true,
+            "minecraft:breakonpush": true,
+            "minecraft:map_color": "#6b6b6b",
+            "minecraft:block_light_absorption": 0,
+            "minecraft:block_light_emission": 0.0
+        }
+    },
+    "events": {
+        }
+    }
+
+

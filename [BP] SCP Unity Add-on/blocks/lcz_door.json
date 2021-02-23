@@ -1,0 +1,190 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "ashvx:lcz_door",
+            "category": "Equipment",
+            "properties": {
+                "door:open": [ true, false ],
+                "lcz_door:facing_direction": [0, 1, 2, 3]                
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "lcz_door_1",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:on_interact": {
+                "event": "door:closed",
+                "target": "self"
+            },
+            "minecraft:pick_collision": {
+                "origin": [-8,0,-8],
+                "size": [16, 32,3]
+            },
+            "minecraft:entity_collision": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    32,
+                    3
+                ]
+            },
+            "minecraft:geometry": "geometry.lcz_door_1",
+            "minecraft:destroy_time": 99999999999999999999,
+            "minecraft:friction": 0.6,
+            "minecraft:map_color": "#FFFFFF",
+            "minecraft:flammable": {
+                "flame_odds": 0,
+                "burn_odds": 0
+            },
+            "minecraft:block_light_emission": 0.0,
+            "minecraft:block_light_absorption": 0,
+            "minecraft:rotation": {},
+            "minecraft:on_player_placing": {
+                "event": "set_placing_rotation"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_property('door:open') == false",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "door:closed",
+                        "target": "self"
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            5,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            3,
+                            32,
+                            16
+                        ]
+                    },
+                    "minecraft:entity_collision": {
+                        "origin": [
+                            5,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            3,
+                            32,
+                            16
+                        ]
+                    },
+                    
+                    "minecraft:geometry": "geometry.lcz_door_2"
+                }
+            },
+            {
+                "condition": "query.block_property('door:open') == true",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "door:opened",
+                        "target": "self"
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            32,
+                            3
+                        ]
+                    },
+                    "minecraft:entity_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            32,
+                            3
+                        ]
+                    },
+                    "minecraft:geometry": "geometry.lcz_door_1"
+                }
+            },
+            {
+                "condition": "query.block_property('lcz_door:facing_direction') == 0",
+                "components": {
+                    "minecraft:rotation": [0, 180, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('lcz_door:facing_direction') == 1",
+                "components": {
+                    "minecraft:rotation": [0, 0, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('lcz_door:facing_direction') == 2",
+                "components": {
+                    "minecraft:rotation": [0, 270, 0]
+                }
+            },
+            {
+                "condition": "query.block_property('lcz_door:facing_direction') == 3",
+                "components": {
+                    "minecraft:rotation": [0, 90, 0]
+                }
+            }
+        ],
+        
+        "events": {
+            "door:opened": {
+                "sequence": [
+                    {
+                        "set_block_property": {
+                            "door:open": false
+                        }
+                    },
+                    {
+                        "play_sound": {
+                            "sound": "door.slide",
+                            "target": "self"
+                        }
+                    }
+               
+               ]
+            },
+            "door:closed": {
+                "sequence": [
+                    {
+                        "set_block_property": {
+                            "door:open": true 
+                        }
+                    },
+                    {
+                        "play_sound": {
+                            "sound": "door.slide",
+                            "target": "self"
+                        }
+                    }
+               
+               ]
+            },
+            "set_placing_rotation": {
+                "set_block_property": {
+                    "lcz_door:facing_direction": "query.cardinal_facing_2d-2" 
+                }
+            }
+        }
+    }
+}
